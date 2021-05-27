@@ -32,7 +32,11 @@ const appendNumber = (number) => {
 
 const updateDisplay = () => {
     actualScreen.innerText = currentOperand;
-    previousScreen.innerText = previousOperand;
+    if (operation != null){
+        previousScreen.innerText = `${previousOperand} ${operation}`
+    } else{
+        previousScreen.innerText = '';
+    }
 }
 
 const chooseOperation = (operator) => {
