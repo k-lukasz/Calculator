@@ -32,10 +32,16 @@ const appendNumber = (number) => {
 
 const updateDisplay = () => {
     actualScreen.innerText = currentOperand;
-    if (operation != null){
+    if (operation != null) {
         previousScreen.innerText = `${previousOperand} ${operation}`
-    } else{
+    } else {
         previousScreen.innerText = '';
+    }
+    try {
+        operate();
+        updateDisplay();
+    } catch (actualScreen) {
+        actualScreen.innerText = "You can't divide by 0";
     }
 }
 
@@ -65,10 +71,10 @@ const operate = () => {
             computation = prev * current;
             break;
         case '÷':
-            if (current === 0){
-                alert("You can't divide by 0")
+            if (current === 0) {
+                actualScreen.innerText = "You can't divide by 0";
                 clear();
-                return;
+                throw error("blah");
             }
             computation = prev / current;
             break;
