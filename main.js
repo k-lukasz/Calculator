@@ -38,7 +38,6 @@ const updateDisplay = () => {
         previousScreen.innerText = '';
     }
     try {
-        operate();
         updateDisplay();
     } catch (actualScreen) {
         actualScreen.innerText = "You can't divide by 0";
@@ -74,7 +73,7 @@ const operate = () => {
             if (current === 0) {
                 actualScreen.innerText = "You can't divide by 0";
                 clear();
-                throw error("blah");
+                throw ("blah");
             }
             computation = prev / current;
             break;
