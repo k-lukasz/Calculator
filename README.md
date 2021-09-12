@@ -1,3 +1,3 @@
 # Calculator
 
-Live: https://siias.github.io/Calculator/
+Live: https://k-lukasz.github.io/Calculator/
